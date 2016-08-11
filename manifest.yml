@@ -4,10 +4,4 @@ applications:
     memory: 500M
     instances: 1
     buildpack: git://github.com/heroku/heroku-buildpack-clojure.git
-    #buildpack: java-buildpack
-    #buildpack: https://github.com/cloudfoundry/java-buildpack.git
     stack: cflinuxfs2
-    #command: routes-diff-cl
-    #command: lein 
-    #command: java -jar target/uberjar/routes-diff-cl.jar 
-    #target: target/uberjar/routes-diff-cl.jar
