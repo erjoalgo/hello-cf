@@ -47,6 +47,5 @@
               (get "PORT")
               (or (throw (Throwable. "must provide port number in env")))
               Integer/parseInt)]
-    (printf "running in port %s\n" port)
-    (log/warnf "running in port %s\n" port)
+    (log/infof "running in port %s" port)
     (run-jetty app {:port port})))
