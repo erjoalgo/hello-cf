@@ -49,3 +49,14 @@
               Integer/parseInt)]
     (log/infof "running in port %s" port)
     (run-jetty app {:port port})))
+
+'(do ;;repl testing
+  (if (and (resolve `test-server)
+           (bound? (resolve `test-server))
+           (var-get (resolve `test-server)))
+    (.stop (var-get (resolve `test-server))))
+
+  (def test-server (->
+                    app
+                    ;ring.middleware.stacktrace/wrap-stacktrace
+                    (run-jetty {:port 1334 :join? false}))))
