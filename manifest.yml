@@ -5,3 +5,4 @@ applications:
     instances: 1
     buildpack: git://github.com/heroku/heroku-buildpack-clojure.git
     stack: cflinuxfs2
+    command: lein with-profile production trampoline ring server-headless
